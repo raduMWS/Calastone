@@ -26,6 +26,11 @@ public class LetterWordSplitter : IWordSplitter
             }
         }
 
+        if (currentWord.Length > 0)
+        {
+            words.Add(currentWord.ToString());
+        }
+        
         return words;
     }
 }
