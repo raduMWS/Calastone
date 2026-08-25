@@ -2,7 +2,7 @@ using CalastoneTakeHome.Filters;
 
 namespace CalastoneTakeHome.Tests.Filters;
 
-public class MinimumLengthFilterTests
+public sealed class MinimumLengthFilterTests
 {
     [Theory]
     [InlineData("hi")]

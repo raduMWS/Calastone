@@ -3,7 +3,7 @@ using CalastoneTakeHome.Words;
 
 namespace CalastoneTakeHome.Tests;
 
-public class TextFilterPipelineTests
+public sealed class TextFilterPipelineTests
 {
     private sealed class StubSplitter : IWordSplitter
     {

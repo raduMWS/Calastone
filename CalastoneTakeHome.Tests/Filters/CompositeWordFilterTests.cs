@@ -2,7 +2,7 @@ using CalastoneTakeHome.Filters;
 
 namespace CalastoneTakeHome.Tests.Filters;
 
-public class CompositeWordFilterTests
+public sealed class CompositeWordFilterTests
 {
     private sealed class StubFilter : IWordFilter
     {

@@ -2,7 +2,7 @@ using CalastoneTakeHome.Words;
 
 namespace CalastoneTakeHome.Tests.Words;
 
-public class LetterWordSplitterTests
+public sealed class LetterWordSplitterTests
 {
     [Theory]
     [InlineData("hello world", new[] { "hello", "world" })]

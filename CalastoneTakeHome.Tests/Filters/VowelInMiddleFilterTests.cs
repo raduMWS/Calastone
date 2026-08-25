@@ -2,7 +2,7 @@ using CalastoneTakeHome.Filters;
 
 namespace CalastoneTakeHome.Tests.Filters;
 
-public class VowelInMiddleFilterTests
+public sealed class VowelInMiddleFilterTests
 {
     private static readonly char[] Vowels = { 'a', 'e', 'i', 'o', 'u' };
 

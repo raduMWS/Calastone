@@ -2,7 +2,7 @@ using CalastoneTakeHome.Input;
 
 namespace CalastoneTakeHome.Tests.Input;
 
-public class FileTextSourceTests
+public sealed class FileTextSourceTests
 {
     [Fact]
     public void ReadText_ReturnsFileContents()

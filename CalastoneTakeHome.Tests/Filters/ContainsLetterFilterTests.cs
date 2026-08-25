@@ -2,7 +2,7 @@ using CalastoneTakeHome.Filters;
 
 namespace CalastoneTakeHome.Tests.Filters;
 
-public class ContainsLetterFilterTests
+public sealed class ContainsLetterFilterTests
 {
     [Theory]
     [InlineData("tired")]
