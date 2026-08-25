@@ -12,7 +12,7 @@ public class VowelInMiddleFilter : IWordFilter
     {
         if (vowels == null)
         {
-            throw new ArgumentException("Vowels list is not ok", nameof(vowels));
+            throw new ArgumentException("Vowels cannot be null", nameof(vowels));
         }
 
         // lower-cased so the middle-letter comparison below is case insensitive

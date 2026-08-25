@@ -6,12 +6,17 @@ public class CompositeWordFilter : IWordFilter
 
     public CompositeWordFilter(IEnumerable<IWordFilter> filters)
     {
-        if (filters == null || !filters.Any())
+        if (filters == null)
         {
-            throw new ArgumentException("No filters present", nameof(filters));
+            throw new ArgumentException("Filters cannot be null", nameof(filters));
         }
 
         _filters = filters.ToList();
+
+        if (_filters.Count == 0)
+        {
+            throw new ArgumentException("Filters cannot be empty", nameof(filters));
+        }
     }
 
     public bool ShouldExclude(string word)

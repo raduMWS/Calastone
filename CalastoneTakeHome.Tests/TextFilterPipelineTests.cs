@@ -50,12 +50,12 @@ public sealed class TextFilterPipelineTests
     [Fact]
     public void Constructor_NullSplitter_Throws()
     {
-        Assert.Throws<ArgumentNullException>(() => new TextFilterPipeline(null!, new ExcludeByPrefixFilter("a")));
+        Assert.Throws<ArgumentException>(() => new TextFilterPipeline(null!, new ExcludeByPrefixFilter("a")));
     }
 
     [Fact]
     public void Constructor_NullFilter_Throws()
     {
-        Assert.Throws<ArgumentNullException>(() => new TextFilterPipeline(new StubSplitter(Array.Empty<string>()), null!));
+        Assert.Throws<ArgumentException>(() => new TextFilterPipeline(new StubSplitter(Array.Empty<string>()), null!));
     }
 }

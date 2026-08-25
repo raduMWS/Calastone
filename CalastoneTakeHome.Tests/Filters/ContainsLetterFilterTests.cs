@@ -6,7 +6,7 @@ public sealed class ContainsLetterFilterTests
 {
     [Theory]
     [InlineData("tired")]
-    [InlineData("Tired")]  // case insensitivity
+    [InlineData("Tired")]
     [InlineData("")]
     public void ShouldExclude_WordContainsLetter_ReturnsTrue(string word)
     {

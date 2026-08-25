@@ -20,8 +20,8 @@ public sealed class CompositeWordFilterTests
     }
 
     [Theory]
-    [InlineData(new[] { false, true })]  // one filter excludes
-    [InlineData(new[] { true, true })]   // all filters exclude
+    [InlineData(new[] { false, true })]
+    [InlineData(new[] { true, true })]
     public void ShouldExclude_AnyFilterExcludes_ReturnsTrue(bool[] filterResults)
     {
         var composite = new CompositeWordFilter(filterResults.Select(r => (IWordFilter)new StubFilter(r)));

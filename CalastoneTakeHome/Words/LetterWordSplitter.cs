@@ -2,7 +2,7 @@ using System.Text;
 
 namespace CalastoneTakeHome.Words;
 
-//split text into words by letters ignoring punctuation
+// split text into words by letters ignoring punctuation
 public class LetterWordSplitter : IWordSplitter
 {
     public IEnumerable<string> Split(string text)
@@ -30,7 +30,7 @@ public class LetterWordSplitter : IWordSplitter
         {
             words.Add(currentWord.ToString());
         }
-        
+
         return words;
     }
 }

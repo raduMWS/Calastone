@@ -13,6 +13,12 @@ dotnet run -- some/file.txt # or point it at another file
 
 Needs .NET 10.
 
+## Running the tests
+
+```bash
+dotnet test
+```
+
 ## The filters
 
 A word gets dropped if it:
@@ -47,8 +53,22 @@ when they read the same direction.
 handles punctuation and runs of spaces without special cases. It does mean
 `don't` comes out as `don` and `t`, which felt like a fair trade for this input.
 
+## The tests
+
+There's a test class per filter, plus the splitter and the file source. The
+examples the brief gives (`clean`, `what`, `currently`, `the`, `rather`) are used
+directly as cases for the vowel filter, since they're the part most likely to be
+read wrong.
+
+`TextFilterPipelineTests` stubs the splitter and the filter out, so it only
+checks the pipeline's own job — that it keeps what isn't excluded.
+`TextFilterPipelineEndToEndTests` then wires up the real splitter and the real
+three filters the way `Program.cs` does, and runs sentences from the input
+through it, so the combination the brief asks for is covered rather than just
+the pieces.
+
 ## If I'd kept going
 
-Tests per filter — the examples in the brief make good cases, and the interfaces
-are already easy to test against. And if the input could ever be large, the
-splitter should stream instead of building the whole list up front.
+If the input could ever be large, the splitter should stream instead of building
+the whole list up front. The filter set is also still hardcoded in `Program.cs` —
+if it needed to change without a rebuild, it'd move to config.

@@ -12,12 +12,12 @@ public class TextFilterPipeline
     {
         if (splitter == null)
         {
-            throw new ArgumentNullException(nameof(splitter));
+            throw new ArgumentException("Splitter cannot be null", nameof(splitter));
         }
 
         if (filter == null)
         {
-            throw new ArgumentNullException(nameof(filter));
+            throw new ArgumentException("Filter cannot be null", nameof(filter));
         }
 
         _splitter = splitter;

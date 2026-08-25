@@ -4,15 +4,15 @@ namespace CalastoneTakeHome.Tests.Filters;
 
 public sealed class VowelInMiddleFilterTests
 {
-    private static readonly char[] Vowels = { 'a', 'e', 'i', 'o', 'u' };
+    private static readonly char[] Vowels = new[] { 'a', 'e', 'i', 'o', 'u' };
 
     [Theory]
     [InlineData("clean")]
     [InlineData("what")]
     [InlineData("currently")]
-    [InlineData("a")]      // single-letter word, the letter itself is the "middle"
-    [InlineData("CLEAN")]  // case insensitivity
-    [InlineData("")]       // empty word
+    [InlineData("a")]
+    [InlineData("CLEAN")]
+    [InlineData("")]
     public void ShouldExclude_WordWithVowelInMiddle_ReturnsTrue(string word)
     {
         var filter = new VowelInMiddleFilter(Vowels);
@@ -23,7 +23,7 @@ public sealed class VowelInMiddleFilterTests
     [Theory]
     [InlineData("the")]
     [InlineData("rather")]
-    [InlineData("b")]      // single-letter word, consonant
+    [InlineData("b")]
     public void ShouldExclude_WordWithoutVowelInMiddle_ReturnsFalse(string word)
     {
         var filter = new VowelInMiddleFilter(Vowels);
